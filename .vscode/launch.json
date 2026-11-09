@@ -1,0 +1,55 @@
+{
+  // Debug configurations for VS Code (needs the "Python" and "Python Debugger"
+  // extensions, with the interpreter set to this project's .venv).
+  // Pick one from the Run and Debug panel (Ctrl+Shift+D), then press F5.
+  "version": "0.2.0",
+  "configurations": [
+    {
+      "name": "Streamlit app (debug)",
+      "type": "debugpy",
+      "request": "launch",
+      "module": "streamlit",
+      "args": [
+        "run", "${workspaceFolder}/app.py",
+        "--server.headless", "true",
+        "--server.runOnSave", "false",
+        "--server.fileWatcherType", "none"
+      ],
+      "cwd": "${workspaceFolder}",
+      "envFile": "${workspaceFolder}/.env",
+      "justMyCode": true,
+      "console": "integratedTerminal"
+    },
+    {
+      "name": "One agent turn, offline (no API key, no cost)",
+      "type": "debugpy",
+      "request": "launch",
+      "program": "${workspaceFolder}/scripts/debug_agent.py",
+      "args": ["--offline"],
+      "cwd": "${workspaceFolder}",
+      "justMyCode": true,
+      "console": "integratedTerminal"
+    },
+    {
+      "name": "One agent turn, real Claude",
+      "type": "debugpy",
+      "request": "launch",
+      "program": "${workspaceFolder}/scripts/debug_agent.py",
+      "args": ["Which 5 product categories bring in the most revenue? Show me a chart."],
+      "cwd": "${workspaceFolder}",
+      "envFile": "${workspaceFolder}/.env",
+      "justMyCode": true,
+      "console": "integratedTerminal"
+    },
+    {
+      "name": "Current test file",
+      "type": "debugpy",
+      "request": "launch",
+      "module": "pytest",
+      "args": ["-x", "-q", "${file}"],
+      "cwd": "${workspaceFolder}",
+      "justMyCode": false,
+      "console": "integratedTerminal"
+    }
+  ]
+}

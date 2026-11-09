@@ -1,0 +1,2 @@
+# Optional: only needed to run agent_demo.py (a live LLM tool-calling loop).
+anthropic>=0.40

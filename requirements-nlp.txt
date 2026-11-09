@@ -1,0 +1,6 @@
+# Optional: only needed for the real transformer-backed sentiment analyzer.
+# Without these installed (or without internet access to download model
+# weights on first use), bi_agent.sentiment automatically falls back to a
+# small built-in lexicon scorer -- the rest of the project is unaffected.
+transformers>=4.40
+torch>=2.2

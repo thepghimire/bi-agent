@@ -1,0 +1,8 @@
+__pycache__/
+*.pyc
+.pytest_cache/
+data/*.db
+charts_out/*.png
+.env
+debug_last_turn.json
+.venv/
